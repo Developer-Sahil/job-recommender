@@ -11,8 +11,6 @@ A machine learning-based web application that recommends relevant job listings b
 
 ## 📁 Project Structure
 
-```
-
 job-recommender/
 ├── backend/
 │   ├── ml/
@@ -30,6 +28,8 @@ job-recommender/
 ├── conda.yml                  # Optional: Conda environment setup
 ├── README.md                  # You're here
 └── .hintrc                    # JS/HTML hint config (optional)
+
+```
 
 ````
 
