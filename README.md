@@ -142,21 +142,16 @@ The system parses the text content and returns the **top 10 job matches**.
 
 ## 📜 License
 
-MIT License © 2025 Sahil Sharma (aka Kingfando)
+MIT License © 2025 Sahil Sharma
 
 ---
 
 ## 🧠 Author
 
-**Sahil Sharma (Paradox)**
+**Sahil Sharma**
 
 > "Born to dominate, engineered to evolve."
 
 ---
 
-```
-
----
-
-Let me know if you want this as a downloadable file or want to add a GIF/screenshot section at the top for presentation flair.
 ```
