@@ -1,0 +1,12 @@
+flask
+scikit-learn
+pandas
+numpy
+python-docx
+PyMuPDF
+docx2txt
+PyPDF2
+nltk
+sentence-transformers
+torch
+spacy

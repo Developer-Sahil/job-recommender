@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Recommendation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7f9fc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        input[type="file"] {
+            padding: 10px;
+            margin: 1rem auto;
+            display: block;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .job-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #fafafa;
+        }
+        .job-card h3 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        .job-card p {
+            margin: 4px 0;
+            color: #555;
+        }
+        .similarity {
+            color: #008cba;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Your Resume</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf,.docx" required>
+            <input type="submit" value="Get Job Matches">
+        </form>
+
+        {% if matches %}
+            <h2>Top Job Matches:</h2>
+            {% for job in matches %}
+                <div class="job-card">
+                    <h3>{{ job['Job Title'] }} - {{ job['Company'] }}</h3>
+                    <p><strong>Location:</strong> {{ job['Location'] }}</p>
+                    <p><strong>Description:</strong> {{ job['Job Description'][:250] }}...</p>
+                    <p class="similarity">Match Score: {{ (job['similarity'] * 100) | round(2) }}%</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
