@@ -1,7 +1,3 @@
-Here you go — all the content in one clean block ready for **copy-paste**:
-
----
-
 ```markdown
 # 🔍 AI-Powered Job Recommender System
 
