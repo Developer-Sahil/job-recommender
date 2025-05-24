@@ -30,14 +30,7 @@ vectorizer = TfidfVectorizer(stop_words="english")
 job_vectors = vectorizer.fit_transform(jobs_df["combined_text"])
 
 def match_jobs(resume_text, top_n=10):
-    """
-    Matches the resume text with the top N most relevant jobs based on cosine similarity.
-    Returns a list of dictionaries (job details + similarity score).
-    """
-    # Vectorize the resume
     resume_vector = vectorizer.transform([resume_text])
-
-    # Compute cosine similarity
     similarities = cosine_similarity(resume_vector, job_vectors).flatten()
 
     # Get top N matches
