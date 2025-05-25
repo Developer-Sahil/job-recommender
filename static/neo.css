@@ -1,0 +1,99 @@
+* {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #ffffff;
+            border: 3px solid black;
+            box-shadow: 6px 6px 0 black;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #111;
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        input[type="file"] {
+            border: 2px solid black;
+            padding: 12px;
+            background: #fff;
+            width: 60%;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            border: 2px solid black;
+            background-color: #000;
+            color: #fff;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        .job-card {
+            border: 3px solid black;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #fdfdfd;
+            box-shadow: 4px 4px 0 black;
+        }
+
+        .job-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .job-card p {
+            margin: 6px 0;
+        }
+
+        .similarity {
+            padding: 8px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px dashed black;
+            width: fit-content;
+        }
+
+        .high {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .medium {
+            background-color: #f1c40f;
+            color: #000;
+        }
+
+        .low {
+            background-color: #e74c3c;
+            color: #fff;
+        }
