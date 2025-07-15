@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="static/glass.css"> -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- <link rel="stylesheet" href="static/neo.css"> -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(rgba(0, 0, 64, 0.8), rgba(0, 0, 64, 0.8)), url('/static/register-bg.jpg') no-repeat center center / cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .register-box {
+      background: white;
+      color: #333;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .register-box h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .register-box input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .register-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #222bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .register-box button:hover {
+      background-color: #151da9;
+    }
+
+    .register-box p {
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+
+    .register-box a {
+      color: #222bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .register-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="register-box">
+    <h2>Create an Account</h2>
+    <form method="POST">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+  </div>
+  <!-- User Already Exists Modal -->
+<div class="modal fade" id="userExistsModal" tabindex="-1" role="dialog" aria-labelledby="userExistsLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content border-danger">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="userExistsLabel">User Already Exists</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+          This username or email is already registered. Please try logging in or use a different email.
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- User Not Found Modal -->
+<div class="modal fade" id="userNotFoundModal" tabindex="-1" role="dialog" aria-labelledby="userNotFoundLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content border-warning">
+      <div class="modal-header bg-warning text-white">
+        <h5 class="modal-title" id="userNotFoundLabel">User Not Found</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        We couldn't find an account with that email. Please register to continue.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Show modal if user already exists -->
+  {% if user_exists %}
+    <script>
+      $(document).ready(function() {
+        $('#userExistsModal').modal('show');
+      });
+    </script>
+  {% endif %}
+  <!-- Show modal if user not found -->
+  {% if user_not_found %}
+    <script>
+      $(document).ready(function() {
+        $('#userNotFoundModal').modal('show');
+      });
+    </script>
+  {% endif %}
+</body>
+</html>

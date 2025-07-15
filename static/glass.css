@@ -14,7 +14,7 @@
         }
 
         .container {
-            backdrop-filter: blur(20px);
+            /* backdrop-filter: blur(20px); */
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
@@ -66,7 +66,7 @@
 
         .job-card {
             background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
+            /* backdrop-filter: blur(12px); */
             border-radius: 16px;
             padding: 24px;
             margin-bottom: 20px;

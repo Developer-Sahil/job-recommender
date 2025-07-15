@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>{{ 'Edit Job' if job else 'Add New Job' }}</h2>
+    <form method="post">
+        <input name="title" placeholder="Job Title" value="{{ job.title if job else '' }}"><br>
+        <input name="company" placeholder="Company" value="{{ job.company if job else '' }}"><br>
+        <textarea name="description" placeholder="Description">{{ job.description if job else '' }}</textarea><br>
+        <input name="skills" placeholder="Required Skills (comma separated)" value="{{ job.skills if job else '' }}"><br>
+        <button type="submit">Save</button>
+    </form>
+
+</body>
+</html>

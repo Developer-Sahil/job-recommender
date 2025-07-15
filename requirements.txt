@@ -10,3 +10,6 @@ nltk
 sentence-transformers
 torch
 spacy
+flask-login
+flask-bcrypt
+flask-sqlalchemy
